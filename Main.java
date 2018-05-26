@@ -1,4 +1,3 @@
-
 package hw9_2;
 
 class Student {
