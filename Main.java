@@ -1,7 +1,6 @@
 /*
- * ÀÛ¼ºÀÚ : ±æº¸¹Ì
- * ÀÛ¼ºÀÏ : 5.26
- * ÀÛ¼º³»¿ë : ¹«¸í Å¬·¡½º
+ * ìž‘ì„±ìž : ê¸¸ë³´ë¯¸
+ * ìž‘ì„±ë‚´ìš© : ë¬´ëª… í´ëž˜ìŠ¤
  */
 package hw9_2;
 
@@ -22,20 +21,20 @@ public class Main {
 	}
 
 	public static void main(String... args) {
-		System.out.println("hw9_2: ±æº¸¹Ì");
+		System.out.println("hw9_2: ê¸¸ë³´ë¯¸");
 
 		Student kim = new Student();
 		kim.age = 19;
 		kim.score = 80;
 
-		// µû·Î Å¬·¡½º Á¤ÀÇÇÏÁö¸»°í ¹«¸í Å¬·¡½º¸¦ ÀÌ¿ëÇÏ±â
+		// ë”°ë¡œ í´ëž˜ìŠ¤ ì •ì˜í•˜ì§€ë§ê³  ë¬´ëª… í´ëž˜ìŠ¤ë¥¼ ì´ìš©í•˜ê¸°
 		check(kim, new Tester() {
 			public boolean test(Student s) {
 				return s.score>=60;
 			}
 		});
 
-		// µû·Î Å¬·¡½º Á¤ÀÇÇÏÁö¸»°í ¹«¸í Å¬·¡½º¸¦ ÀÌ¿ëÇÏ±â
+		// ë”°ë¡œ í´ëž˜ìŠ¤ ì •ì˜í•˜ì§€ë§ê³  ë¬´ëª… í´ëž˜ìŠ¤ë¥¼ ì´ìš©í•˜ê¸°
 		check(kim, new Tester() {
 			public boolean test(Student s) {
 				return s.age>=20;
