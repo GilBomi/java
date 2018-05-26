@@ -1,7 +1,4 @@
-/*
- * 작성자 : 길보미
- * 작성내용 : 무명 클래스
- */
+
 package hw9_2;
 
 class Student {
