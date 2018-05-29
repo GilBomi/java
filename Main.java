@@ -1,40 +1,49 @@
-package hw9_2;
-
+/*
+ * ÀÛ¼ºÀÚ : ±æº¸¹Ì
+ * ÀÛ¼ºÀÏ : 5.29
+ * ÀÛ¼º³»¿ë : ¶÷´Ù½Ä
+ */
+package snippet;
 class Student {
-	int age;
-	int score;
-}
+	  int age;
+	  int score;
+	 }
 
-@FunctionalInterface
-interface Tester {
-	boolean test(Student s);
-}
+	@FunctionalInterface
+	 interface Tester {
+	  boolean test(Student s);
+	 }
 
-public class Main {
-	public static void check(Student s, Tester t) {
-		boolean result = t.test(s);
-		System.out.println(result);
-	}
+	public class Main {
+	  public static void check(Student s, Tester t) {
+	   boolean result = t.test(s);
+	   System.out.println(result);
+	  }
 
-	public static void main(String... args) {
-		System.out.println("hw9_2: ê¸¸ë³´ë¯¸");
+	 public static void main(String... args) {
+	   System.out.println("hw9_3: ±æº¸¹Ì");
 
-		Student kim = new Student();
-		kim.age = 19;
-		kim.score = 80;
+	  Student kim = new Student();
+	   kim.age = 19;
+	   kim.score = 80;
+/*
+	  class PassTester implements Tester {
+	    @Override
+	    public boolean test(Student s) {
+	     return s.score >= 60;
+	    }
+	   }
 
-		// ë”°ë¡œ í´ëž˜ìŠ¤ ì •ì˜í•˜ì§€ë§ê³  ë¬´ëª… í´ëž˜ìŠ¤ë¥¼ ì´ìš©í•˜ê¸°
-		check(kim, new Tester() {
-			public boolean test(Student s) {
-				return s.score>=60;
-			}
-		});
+	  class AdultTester implements Tester {
+	    @Override
+	    public boolean test(Student s) {
+	     return s.age >= 20;
+	    }   
+	   }
+*/
+	   // À§¿¡ ÁÖ¼® Ã³¸®ÇÑ °ÍÀ» ¶÷´Ù½ÄÀ¸·Î ¹Ù²ã¼­ Ãâ·ÂÇÏ±â
+	  check(kim, (s)->{return s.score>=60;});
 
-		// ë”°ë¡œ í´ëž˜ìŠ¤ ì •ì˜í•˜ì§€ë§ê³  ë¬´ëª… í´ëž˜ìŠ¤ë¥¼ ì´ìš©í•˜ê¸°
-		check(kim, new Tester() {
-			public boolean test(Student s) {
-				return s.age>=20;
-			}
-		});
-	}
-}
+	  check(kim,(s)->s.age>=20);
+	  }
+	 }
